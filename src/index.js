@@ -33,20 +33,19 @@ app.get("/weather", (req, res) => {
   });
 });
 
+app.get("/about", (req, res) => {
+  res.render("about", {
+    title: "About Me",
+  });
+});
 
-
-app.get('/about', (req, res) => {
-  res.render('about', {
-      title: 'About Me',
-  })
-})
-
-app.get('/help', (req, res) => {
-  res.render('help', {
-      helpText: 'Please go to homepage try search To get temperature of that city or State',
-      title: 'Help',
-  })
-})
+app.get("/help", (req, res) => {
+  res.render("help", {
+    helpText:
+      'Please go to Homepage try search To get temperature of that city or State',
+    title: "Help",
+  });
+});
 
 app.get("*", (req, res) => {
   res.render("404", { title: "404", errorMessage: "Page not found" });
